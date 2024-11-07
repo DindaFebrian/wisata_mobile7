@@ -1,95 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_mobile7/materimodulscreens/pertemuan5.dart';
+
 void main(){
-  runApp(ExampleState());
+  runApp(TravelApp());
 }
 
-class ExampleState extends StatelessWidget {
-  const ExampleState({super.key});
+class TravelApp extends StatelessWidget {
+  const TravelApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Latihan Flutter",
-      home:FirstScreen()
-    );
-    
-  }
-}
-
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Layar Pertama"),
-        backgroundColor: Colors.pink[100],
-
-        actions: <Widget>[
-          IconButton(onPressed: (){},
-           icon: Icon(Icons.search)),
-        ],
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu),
-        ),
-      ),
-      body: Text("Hello World!!!"),
-    );
-  }
-}
-
-class BiggerText extends StatefulWidget {
-  final String text;
-
-  const BiggerText({super.key, required this.text});
-
-  @override
-  State<BiggerText> createState() => _BiggerTextState();
-}
-
-class _BiggerTextState extends State<BiggerText> {
-  double _textsize = 16.0;
-  bool _box = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: <Widget>[
-      _box ? Container(
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: Colors.purple[100],
-          boxShadow: const[
-            BoxShadow(
-              color: Colors.black,
-              blurRadius:10.0,
-              offset: Offset(3, 6),
-            ),
-          ],
-          borderRadius: BorderRadius.circular(8.0),
-        ),
-        child: Text(
-          widget.text,
-          style: TextStyle(fontSize: _textsize),
-        )
-      )
-      : Text(
-        widget.text,
-        style: TextStyle(fontSize: _textsize),
-      ),
-      ElevatedButton(
-        child: Text("Perbesar"),
-        onPressed: (){
-          setState(() {
-            _textsize = 35.0;
-            _box = true;
-          });
-        },
-       )
-      ],
+      title: 'Wisata Mobile',
+      debugShowCheckedModeBanner: false,
+      home: FormScreen(),
     );
   }
 }
